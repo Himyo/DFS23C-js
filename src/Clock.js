@@ -22,16 +22,28 @@ const intervalId = setInterval(changeClockTime, 1000) // setInterval va appeler 
 
 const timezoneList = ['UTC', 'Asia/Tokyo', 'America/Anchorage']
 const timezone = document.createElement('p')
-timezone.textContent = timezoneList[0]
+let currentTimezoneIndex = 0
+timezone.textContent = timezoneList[currentTimezoneIndex]
 
 // BUTTON NEXT, pour changer de timezone
 const next = document.createElement('button')
 next.textContent = 'next'
 
+next.addEventListener('click', () => {
+    currentTimezoneIndex = (currentTimezoneIndex + 1) % timezoneList.length // currentTimezoneIndez = currentTimezoneIndex + 1
+    timezone.textContent = timezoneList[currentTimezoneIndex]
+})
+
 
 // BUTTON PREVIOUS, pour changer de timezone
 const previous = document.createElement('button')
 previous.textContent = 'previous'
+
+previous.addEventListener('click', () => {
+    currentTimezoneIndex = (currentTimezoneIndex <= 0 ? timezoneList.length : currentTimezoneIndex) - 1 // currentTimezoneIndez = currentTimezoneIndex + 1
+    timezone.textContent = timezoneList[currentTimezoneIndex]
+
+})
 
 // BUTTON STOP POUR ARRETER L'INTERVAL
 const stop = document.createElement('button')
