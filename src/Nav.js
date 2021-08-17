@@ -3,7 +3,7 @@ const title = document.createElement('h1') // create H1
 title.textContent = 'List 1'; 
 root.appendChild(title)
 
-const newLi = (ulObject, ...liOptions) => {
+const newLi = (ulObject, ...liOptions) => { // ...liOptions  va permettre de mettre une infinité de parametres a la suite https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/rest_parameters
     const docLi = document.createElement("li")    
     liOptions.forEach(elem => {
         docLi.setAttribute(elem[0], elem[1])
