@@ -77,12 +77,31 @@ otherCalculator.appendChild(screen)
 
 const calculatorElements = [...Array(10), '+', '-', '*', '/', 'C', '=', '%']
 
-calculatorElements.forEach((value, key) => {
-    const element = document.createElement('button')
-    element.textContent = typeof value === 'string' ? value : key 
-    otherCalculator.appendChild(element);
-})
+calculatorElements.forEach((value, key) => 
+    {
+        const element = document.createElement('button')
+        const buttonValue = typeof value === 'string' ? value : key
 
+        element.setAttribute('value', buttonValue)
+        
+        element.addEventListener('click', event => {
+            switch(event.target.value) {
+                case 'C':
+                    screen.textContent = ''
+                    break;
+                case '=':
+                    screen.textContent = eval(String(screen.textContent))
+                    break;
+                default:
+                    screen.textContent += event.target.value
+            }
+        })
+
+        element.textContent = buttonValue
+        
+        otherCalculator.appendChild(element);
+    }
+)
 
 root.appendChild(otherCalculator)
 //=============================================================
