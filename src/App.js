@@ -13,9 +13,9 @@ const templateString = `TEMPLATE STRING`;
 ucFirst(string1);
 
 const title = document.createElement('h1') // create H1
-title.textContent = 'Hello, World'; // set text as Hello world
+title.textContent = 'Calculator 1'; // set text as Hello world
 const otherTitle = document.createElement('h1') // create H1
-otherTitle.textContent = 'Bye, World';
+otherTitle.textContent = 'Calculator 2';
 
 const root =  document.querySelector('#root')
 //=============================================================
