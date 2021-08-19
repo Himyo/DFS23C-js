@@ -11,7 +11,7 @@ const apiKey = '154af27bbd5e70a202fde7101ff4d765'
 //         meteo.textContent = json.weather[0].description
 // })
 
-async function getWeather(city) {
+async function getWeather(city) { // maintenant getWeather va nous retourner une promise
     let weather // cree une variable qu'on va modifier plus tard
     console.log('avant le .json()', weather)
     try {
@@ -28,7 +28,7 @@ async function getWeather(city) {
     meteo.textContent = weather
     return weather
 }
-const temps = getWeather('reims')
+const temps = getWeather('reims') // getWeather a cause du async/await nous retourne une promise
 
 const btn = document.createElement("button");
 btn.textContent = "Lancer la fonction";
