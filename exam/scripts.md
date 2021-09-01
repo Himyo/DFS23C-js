@@ -47,8 +47,8 @@ const expectedResult2 = {
     "c": ["foo", "foo"],
 }
 
-console.log(merge(wu, tang) === expectedResult1); 
-console.log(merge(tang, clan) === expectedResult2); 
+console.log(JSON.stringify(merge(wu, tang)) === JSON.stringify(expectedResult1)); 
+console.log(JSON.stringify(merge(tang, clan)) ===  JSON.stringify(expectedResult2)); 
 ```
 
 ### L33t Sp34k
